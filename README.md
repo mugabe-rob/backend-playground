@@ -21,7 +21,7 @@ This repository serves as a sandbox environment for testing and learning various
 
 - Node.js (v16+)
 - npm or yarn
-- 
+
 
 ### Installation
 
@@ -63,4 +63,4 @@ MIT
 
 ## Contact
 
-[Robert MUGABE] - [mugaberoberto007@gmail,com]
+Robert MUGABE - mugaberoberto007@gmail,com

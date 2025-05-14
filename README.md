@@ -47,13 +47,17 @@ npm run dev
 
 ```
 back-end-playground/
-├── src/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   └── index.js
-├── config/
-├── tests/
+|── src/
+|    ├── config/
+|    ├── models/
+|    ├── modules/
+|	 |	    └──books
+|	 |			   ├──books.controller.js
+|	 |			   ├──books.service.js
+|	 |			   └──index/router.js
+|    └── index/moduleRouter.js
+|──Server/main.js
+|── tests/
 └── package.json
 ```
 

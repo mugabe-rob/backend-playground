@@ -27,7 +27,7 @@ This repository serves as a sandbox environment for testing and learning various
 
 ```bash
 # Clone the repository
-git clone https://github.com/[mugabe-rob]/backend-playground.git
+git clone https://github.com/mugabe-rob/backend-playground.git
 
 # Navigate to the project directory
 cd backend-playground

@@ -56,6 +56,5 @@ import express from 'express';
 // };
 
 export const getAllBooks = (req, res) => {
-  return res.json({ message: 'Hello from bookController' });
+  return res.json({ message: 'Welcome to the Library' });
 };
-

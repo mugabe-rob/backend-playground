@@ -1,3 +1,5 @@
+
+
 let books = [
   { id: 1, title: "1984", author: "Orwell", year: 1949, available: true },
   { id: 2, title: "Dune", author: "Herbert", year: 1965, available: true },
@@ -7,3 +9,5 @@ let books = [
 ];
 
 let nextId = 6;
+
+

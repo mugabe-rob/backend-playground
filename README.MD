@@ -25,57 +25,54 @@ The project is organized as follows:
 backend-playground/
 │
 ├── controllers/
-│   └── product.controller.js
+│   ├── product.controller.js
 │   └── CourseController.js
 │
 ├── models/
-│   └── courseModel.js
+│   ├── courseModel.js
 │   └── product.model.js
 │
-├── routes/          
-│   └── courseRoutes.js
+├── routes/
+│   ├── courseRoutes.js
 │   └── product.route.js
-│  
 │
 ├── middleware/
 │   └── logger.js
 │
-│
-│
 ├── Server/
-│    └── main.js    
+│   └── main.js
 │
 ├── config/
-│         └── config.js
-│         └── index.js
+│   ├── config.js
+│   └── index.js
 │
 ├── src/
-│           └── books/
-│                      └── books.controller.js
-│                      └── books.service.js
-│                      └── index.js
-│            
-│           └──config/
-│                     └── config.json
+│   ├── books/
+│   │   ├── books.controller.js
+│   │   ├── books.service.js
+│   │   └── index.js
+│   │
+│   ├── config/
+│   │   └── config.json
+│   │
+│   ├── models/
+│   │   ├── index.js
+│   │   └── user.js
+│   │
+│   ├── modules/
+│   │   └── user.js
+│   │
+│   ├── app.js
+│   └── test-connection.js
 │
-│           └──models/
-│                    └──index.js
-│                    └──user.js
-│
-│           └──modules/
-│                   └──user.js                         
-│           └──app.js
-│           └──test-connection.js
-│
-│ 
 ├── tests/
-│  
 │
-├── server.js   
+├── server.js
 ├── package.json
 ├── .gitignore
-└── .gitignore.bak
+├── .gitignore.bak
 └── package-lock.json
+
 
 
 ## Installation

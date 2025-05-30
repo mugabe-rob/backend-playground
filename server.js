@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const courseRoutes = require('./routes/courseRoutes');
-const productRoutes = require('./routes/product.route'); 
+const courseRoutes = require('./src/routes/courseRoutes.js');
+const productRoutes = require('./src/routes/product.route.js');
 const mongoose = require('mongoose');
 
 

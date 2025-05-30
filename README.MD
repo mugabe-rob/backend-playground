@@ -22,56 +22,19 @@ Welcome to the Backend Playground! This project is designed to provide a flexibl
 ## Project Structure
 
 The project is organized as follows:
-backend-playground/
-│
-├── controllers/
-│   ├── product.controller.js
-│   └── CourseController.js
-│
-├── models/
-│   ├── courseModel.js
-│   └── product.model.js
-│
-├── routes/
-│   ├── courseRoutes.js
-│   └── product.route.js
-│
-├── middleware/
-│   └── logger.js
-│
-├── Server/
-│   └── main.js
-│
-├── config/
-│   ├── config.js
-│   └── index.js
-│
-├── src/
-│   ├── books/
-│   │   ├── books.controller.js
-│   │   ├── books.service.js
-│   │   └── index.js
-│   │
-│   ├── config/
-│   │   └── config.json
-│   │
-│   ├── models/
-│   │   ├── index.js
-│   │   └── user.js
-│   │
-│   ├── modules/
-│   │   └── user.js
-│   │
-│   ├── app.js
-│   └── test-connection.js
-│
-├── tests/
-│
-├── server.js
-├── package.json
-├── .gitignore
-├── .gitignore.bak
-└── package-lock.json
+back-end-playground/
+|── src/
+|    ├── config/
+|    ├── models/
+|    ├── modules/
+|	 |	    └──books
+|	 |			   ├──books.controller.js
+|	 |			   ├──books.service.js
+|	 |			   └──index/router.js
+|    └── index/moduleRouter.js
+|──Server/main.js
+|── tests/
+└── package.json
 
 
 

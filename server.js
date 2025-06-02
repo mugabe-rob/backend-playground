@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const courseRoutes = require('./src/routes/courseRoutes');
+
 const productRoutes = require('./src/routes/product.route');
 const authRoutes = require('./src/routes/auth.route');
 const authMiddleware = require('./src/middleware/auth.middleware');
@@ -12,7 +12,6 @@ const mongoose = require('mongoose');
 app.use(express.json());
 
 
-app.use('/api/courses', courseRoutes);
 app.use('/api/products', productRoutes); 
 app.use('/api/auth', authRoutes);
 

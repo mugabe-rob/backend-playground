@@ -1,30 +1,24 @@
-const mongoose = require('mongoose');
+module.exports = (sequelize, DataTypes) => {
+  const Product = sequelize.define('Product', {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      onDelete: 'CASCADE',
+      foreignKey: 'productId'
 
-const productSchema = mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: [true, "Please enter a product name"],
-        },
-        quantity: {
-            type: Number,
-            required: true,
-            default: 0,
-        },
-        price: {
-            type: Number,
-            required: true,
-            default: 0,
-        },
-        image: {
-            type: String,
-            required: false,
-        }
     },
-    {
-        timestamps: true,
-    }
-);
-const Product = mongoose.model("Product", productSchema);
+    stock: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      defaultValue: 0,
+      allowNull: false
+    },
+    
+  });
+  return Product;
+};
 
-module.exports = Product;

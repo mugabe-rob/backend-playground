@@ -1,23 +1,21 @@
 # Backend Playground
 
-Welcome to the **Backend Playground**! This project provides a flexible and modular backend architecture tailored for managing products, courses, and books. It's ideal for experimenting, learning, or building upon.
+Welcome to the **Backend Playground**! This project provides a flexible and modular backend architecture tailored for managing products and providing privelege to the users. It's ideal for experimenting, learning, or building upon.
 
 ## 📁 Project Structure
 
 ```
 backend-playground/
 ├── src/
-│   ├── config/                  # Environment and app configurations
-│   ├── models/                  # Database schemas/models
-│   ├── modules/
-│   │   └── books/
-│   │       ├── books.controller.js
-│   │       ├── books.service.js
-│   │       └── index/router.js
-│   └── index/moduleRouter.js   # Routes aggregator
-├── Server/
-│   └── main.js                 # Entry point
-├── tests/                      # Unit and integration tests
+│   ├── config/                  
+│   ├── controllers/                  
+│   ├── middleware/
+│   │── migrations/ 
+│   │── models/       
+│   │── modules/       
+│   │── routes/   
+│   │── tests/  
+├── server.js                     
 └── package.json
 ```
 

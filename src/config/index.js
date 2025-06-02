@@ -1,7 +1,7 @@
 const express = require('express');
 const courseRoutes = require('./routes/courseRoutes');
-const config = require('./config/config');
-const logger = require('./middleware/logger');
+const config = require('./config');
+const logger = require('../../middleware/logger');
 
 // Initialize express app
 const app = express();

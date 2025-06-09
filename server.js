@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 const db = require('./src/models');
+const cors = require('cors');
 
 const productRoutes = require('./src/routes/product.route');
 const authRoutes = require('./src/routes/auth.route');
 const orderRoutes = require('./src/routes/order.route');
 const authMiddleware = require('./src/middleware/auth.middleware');
 
+
+app.use(cors({
+      origin: 'http://localhost:3001' 
+    }));
+    
 app.use(express.json());
 
 app.use('/api/products', productRoutes);

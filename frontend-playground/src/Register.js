@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import './Register.css'; 
+import './Register.css';
 
 const API_BASE_URL = 'http://localhost:3000/api/auth';
 
@@ -9,6 +9,12 @@ function Register() {
   const [formData, setFormData] = useState({ username: '', password: '', repeatPassword: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem('isLoggedIn')) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,7 +72,6 @@ function Register() {
             className="w-full p-2 mb-4 border rounded"
             required
           />
-
           <br /> <br />
           <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
             Register

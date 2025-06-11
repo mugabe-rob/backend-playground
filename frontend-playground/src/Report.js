@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Report.css';
 
 function Report() {
@@ -9,6 +10,20 @@ function Report() {
   const [editForm, setEditForm] = useState({ name: '', stock: '', price: '' });
   const [modalOpen, setModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  // Protected my page and auto-logout after 5 minutes
+   useEffect(() => {
+    if (!localStorage.getItem('isLoggedIn')) {
+      navigate('/login');
+    }
+    const timeout = setTimeout(() => {
+      localStorage.removeItem('isLoggedIn');
+      alert('Session expired. Please login again.');
+      navigate('/login');
+    }, 300000); // 5 minutes
+    return () => clearTimeout(timeout);
+  }, [navigate]);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/products')
@@ -82,7 +97,7 @@ function Report() {
                   <th>ID</th>
                   <th>Name</th>
                   <th>Stock</th>
-                  <th>Price</th>
+                  <th>Price (USD)</th>
                   <th>Created At</th>
                   <th>Updated At</th>
                   <th>ACTIONS</th>
@@ -140,7 +155,7 @@ function Report() {
           </div>
         )}
 
-        {/* Stunning Edit Modal */}
+       
         {modalOpen && (
           <div className="modal-overlay">
             <div className="modal-container">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './Register.css';
@@ -10,11 +10,7 @@ function Register() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!localStorage.getItem('isLoggedIn')) {
-      navigate('/login');
-    }
-  }, [navigate]);
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

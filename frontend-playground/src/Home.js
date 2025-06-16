@@ -16,18 +16,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-transparent"></div>
-      </div>
+     
+     
 
       {/* Navigation Bar */}
-      <nav className="relative z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+      <nav className="relative z-50 bg-white border-b border-gray-200 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -35,21 +28,21 @@ export default function Home() {
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <ShoppingBag className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">ShopSphere</span>
+              <span className="text-xl font-bold text-black">ShopSphere</span>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className="nav-link text-white hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Home
               </Link>
-              <Link to="/report" className="nav-link text-white hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/report" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Products
               </Link>
-              <Link to="/buy" className="nav-link text-white hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/buy" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Purchase
               </Link>
-              <Link to="/login" className="nav-link text-white hover:text-blue-300 transition-colors duration-300 font-medium flex items-center space-x-1">
+              <Link to="/login" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium flex items-center space-x-1">
                 <User className="w-4 h-4" />
                 <span>Login</span>
               </Link>
@@ -58,7 +51,7 @@ export default function Home() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden text-white hover:text-blue-300 transition-colors duration-300"
+              className="md:hidden text-black hover:text-blue-300 transition-colors duration-300"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -68,16 +61,16 @@ export default function Home() {
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden absolute top-16 left-0 right-0 bg-white/10 backdrop-blur-md border-b border-white/20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="px-4 py-4 space-y-3">
-            <Link to="/" className="block text-white hover:text-blue-300 transition-colors duration-300 font-medium py-2">
+            <Link to="/" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Home
             </Link>
-            <Link to="/report" className="block text-white hover:text-blue-300 transition-colors duration-300 font-medium py-2">
+            <Link to="/report" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Products
             </Link>
-            <Link to="/buy" className="block text-white hover:text-blue-300 transition-colors duration-300 font-medium py-2">
+            <Link to="/buy" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Purchase
             </Link>
-            <Link to="/login" className="block text-white hover:text-blue-300 transition-colors duration-300 font-medium py-2 flex items-center space-x-2">
+            <Link to="/login" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2 flex items-center space-x-2">
               <User className="w-4 h-4" />
               <span>Login</span>
             </Link>

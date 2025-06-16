@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
@@ -89,9 +89,18 @@ export default function Home() {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
         <div className={`text-center max-w-4xl mx-auto transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {/* Welcome Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-600/20 backdrop-blur-sm border border-white/30 rounded-full text-sm font-medium text-white mb-8 animate-pulse">
-            <Zap className="w-4 h-4 mr-2" />
-            Welcome to the Future of Shopping
+          <div
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-400/80 to-blue-600/80 shadow-lg border border-white/40 rounded-full text-base md:text-lg font-semibold text-white mb-10 animate-pulse"
+            style={{
+              backdropFilter: 'blur(8px)',
+              letterSpacing: '0.03em',
+              boxShadow: '0 4px 24px 0 rgba(34,197,94,0.10), 0 1.5px 8px 0 rgba(59,130,246,0.10)'
+            }}
+          >
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 mr-3 shadow">
+              <Zap className="w-5 h-5 text-yellow-300" />
+            </span>
+            <span className="drop-shadow-lg">Welcome to the Future of Shopping</span>
           </div>
 
           {/* Main Heading */}
@@ -105,7 +114,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
-            Discover amazing products, unbeatable prices, and seamless shopping experiences. 
+            Discover amazing products, unbeatable prices, and seamless shopping experiences.
             Your digital marketplace awaits.
           </p>
 
@@ -127,15 +136,15 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              to="/report" 
+            <Link
+              to="/report"
               className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 no-underline"
             >
               <span>Start Shopping</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
-            <Link 
-              to="/report" 
+            <Link
+              to="/report"
               className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
             >
               Browse Products

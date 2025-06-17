@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from './Header'; // <-- Import the Header component
 import './Purchase.css';
 
 const API_BASE_URL = 'http://localhost:3000/api';
@@ -12,7 +13,6 @@ function Purchase() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [orderQuantity, setOrderQuantity] = useState(1);
 
-  // Fetch all products on component mount
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -51,15 +51,12 @@ function Purchase() {
 
     try {
       const newStock = selectedProduct.stock - orderQuantity;
-      
-      // Update stock in database
       await axios.put(`${API_BASE_URL}/products/${selectedProduct.id}`, {
         stock: newStock
       });
 
-      // Update local state
-      setProducts(products.map(product => 
-        product.id === selectedProduct.id 
+      setProducts(products.map(product =>
+        product.id === selectedProduct.id
           ? { ...product, stock: newStock }
           : product
       ));
@@ -91,10 +88,13 @@ function Purchase() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-          <p className="loading-text">Loading products...</p>
+      <div className="min-h-screen flex flex-col bg-gray-100">
+        <Header />
+        <div className="flex flex-1 items-center justify-center">
+          <div className="loading-spinner">
+            <div className="spinner"></div>
+            <p className="loading-text">Loading products...</p>
+          </div>
         </div>
       </div>
     );
@@ -102,6 +102,7 @@ function Purchase() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="header-section">
           <h1 className="page-title">Available Products</h1>

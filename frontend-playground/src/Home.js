@@ -36,7 +36,7 @@ export default function Home() {
               <Link to="/" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Home
               </Link>
-              <Link to="/report" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/login" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Products
               </Link>
               <Link to="/purchase" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">

@@ -25,8 +25,8 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <ShoppingBag className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-600 rounded-lg flex items-center justify-center">
+                <ShoppingBag className="w-5 h-5 text-black" />
               </div>
               <span className="text-xl font-bold text-black">ShopSphere</span>
             </div>
@@ -62,7 +62,7 @@ export default function Home() {
         <div className={`md:hidden absolute top-16 left-0 right-0 bg-white/10 backdrop-blur-md border-b border-white/20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="px-4 py-4 space-y-3">
             <Link to="/" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
-              Home
+              Home"
             </Link>
             <Link to="/report" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Products
@@ -130,7 +130,7 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              to="/report"
+              to="/purchase"
               className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 no-underline"
             >
               <span>Start Shopping</span>

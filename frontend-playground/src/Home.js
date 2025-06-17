@@ -36,10 +36,10 @@ export default function Home() {
               <Link to="/" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Home
               </Link>
-              <Link to="/report" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/login" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Products
               </Link>
-              <Link to="/buy" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
+              <Link to="/purchase" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Purchase
               </Link>
               <Link to="/login" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium flex items-center space-x-1">
@@ -137,7 +137,7 @@ export default function Home() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <Link
-              to="/report"
+              to="/purchase"
               className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
             >
               Browse Products

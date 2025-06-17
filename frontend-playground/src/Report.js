@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header'; // <-- Import the Header component
 import './Report.css';
 
 function Report() {
@@ -13,7 +14,7 @@ function Report() {
   const navigate = useNavigate();
 
   // Protected my page and auto-logout after 5 minutes
-   useEffect(() => {
+  useEffect(() => {
     if (!localStorage.getItem('isLoggedIn')) {
       navigate('/login');
     }
@@ -84,8 +85,9 @@ function Report() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ background: '#fff', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', width: '100%', maxWidth: '900px' }}>
+    <div style={{ minHeight: '100vh', background: '#f3f4f6' }}>
+      <Header />
+      <div style={{ background: '#fff', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', width: '100%', maxWidth: '900px', margin: '2rem auto' }}>
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', textAlign: 'center' }}>Report for Products</h1>
         {loading ? (
           <p style={{ textAlign: 'center' }}>Loading...</p>
@@ -155,7 +157,7 @@ function Report() {
           </div>
         )}
 
-       
+        {/* Edit Modal */}
         {modalOpen && (
           <div className="modal-overlay">
             <div className="modal-container">

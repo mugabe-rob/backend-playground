@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from './Header'; // <-- Import the Header component
+import Header from './Header'; 
 import './Purchase.css';
 
 const API_BASE_URL = 'http://localhost:3000/api';
@@ -106,7 +106,7 @@ function Purchase() {
       <div className="container mx-auto px-4 py-8">
         <div className="header-section">
           <h1 className="page-title">Available Products</h1>
-          <p className="page-subtitle">Choose from our amazing collection</p>
+          
         </div>
 
         {/* Success/Error Message */}

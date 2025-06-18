@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, User, Menu, X, ArrowRight, Star, Zap, Shield } from 'lucide-react';
 
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -25,8 +26,8 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <ShoppingBag className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-600 rounded-lg flex items-center justify-center">
+                <ShoppingBag className="w-5 h-5 text-black" />
               </div>
               <span className="text-xl font-bold text-black">ShopSphere</span>
             </div>
@@ -62,7 +63,7 @@ export default function Home() {
         <div className={`md:hidden absolute top-16 left-0 right-0 bg-white/10 backdrop-blur-md border-b border-white/20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="px-4 py-4 space-y-3">
             <Link to="/" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
-              Home
+              Home"
             </Link>
             <Link to="/report" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Products
@@ -127,24 +128,45 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              to="/report"
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 no-underline"
-            >
-              <span>Start Shopping</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-            <Link
-              to="/purchase"
-              className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
-            >
-              Browse Products
-            </Link>
-          </div>
 
-          {/* Stats */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  to="/purchase"
+                  className="newsletter-btn no-underline"
+                  style={{
+                  padding: '1rem 2rem',
+                  background: 'linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%)',
+                  border: 'none',
+                  borderRadius: '8px',
+                  color: 'white',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)'
+                  }}
+                >
+                  <span>Start Shopping</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  to="/purchase"
+                  className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
+                >
+                  Browse Products
+                </Link>
+                </div>
+
+                <style jsx>{`
+                .newsletter-btn:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+                }
+                `}</style>
+
+                {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-300">
             <div className="text-center">
               <div className="text-3xl font-bold text-gray-800 mb-2">10K+</div>

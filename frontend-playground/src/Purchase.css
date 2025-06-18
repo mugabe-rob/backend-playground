@@ -209,7 +209,7 @@
 .purchase-btn {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, #358df1 0%, #589ceb 100%);
+  background: linear-gradient(135deg, #f9f900 0%, #767568 100%);
   color: black;
   border: none;
   border-radius: 0.75rem;
@@ -221,7 +221,7 @@
 }
 
 .purchase-btn:hover:not(.disabled) {
-  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  background: linear-gradient(135deg, #ccc9eb 0%, #6d28d9 100%);
   transform: translateY(-1px);
   box-shadow: 0 8px 25px 0 rgba(79, 70, 229, 0.4);
 }

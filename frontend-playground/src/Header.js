@@ -34,6 +34,7 @@ function Header() {
             Products
           </button>
           <Link to="/purchase" className="text-black hover:text-blue-600 font-medium">Purchase</Link>
+          <Link to="/add-product" className="text-black hover:text-blue-600 font-medium">Add Product</Link>
           <Link to="/login" className="text-black hover:text-blue-600 font-medium">Login</Link>
         </nav>
       </div>

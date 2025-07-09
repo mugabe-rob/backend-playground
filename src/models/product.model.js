@@ -12,12 +12,13 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0,
       allowNull: false
     },
+
     price: {
       type: DataTypes.DECIMAL(10, 2),
       defaultValue: 0,
       allowNull: false
     },
-    
+
   });
   return Product;
 };

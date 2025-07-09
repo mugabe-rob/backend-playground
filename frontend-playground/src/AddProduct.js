@@ -24,8 +24,7 @@ function AddProduct() {
       });
       setMessage('Product added successfully!');
       setFormData({ name: '', price: '', stock: '' });
-      // Optionally redirect after a delay:
-      // setTimeout(() => navigate('/report'), 1500);
+     
     } catch (err) {
       setMessage('Error adding product');
     }

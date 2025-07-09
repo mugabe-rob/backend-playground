@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import Header from './Header'; // <-- Import the Header component
+import Header from './Header'; 
 
 const API_BASE_URL = 'http://localhost:3000/api/auth';
 
@@ -21,6 +21,7 @@ function Login() {
       if (res.data.token) {
         setMessage('Login successful');
         localStorage.setItem('isLoggedIn', 'true');
+        
         // Set timeout for 5 minutes (300000 ms)
         setTimeout(() => {
           localStorage.removeItem('isLoggedIn');

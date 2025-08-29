@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingBag, User, Menu, X, ArrowRight, Star, Zap, Shield } from 'lucide-react';
-
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -15,11 +15,12 @@ export default function Home() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
-     
-     
-
       {/* Navigation Bar */}
       <nav className="relative z-50 bg-white border-b border-gray-200 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,10 +44,13 @@ export default function Home() {
               <Link to="/purchase" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium">
                 Purchase
               </Link>
-              <Link to="/login" className="nav-link text-black hover:text-blue-300 transition-colors duration-300 font-medium flex items-center space-x-1">
+              <button
+                onClick={handleLoginClick}
+                className="flex items-center space-x-1 px-5 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow hover:from-blue-600 hover:to-purple-700 transition-all duration-200 focus:outline-none"
+              >
                 <User className="w-4 h-4" />
                 <span>Login</span>
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -63,7 +67,7 @@ export default function Home() {
         <div className={`md:hidden absolute top-16 left-0 right-0 bg-white/10 backdrop-blur-md border-b border-white/20 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="px-4 py-4 space-y-3">
             <Link to="/" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
-              Home"
+              Home
             </Link>
             <Link to="/report" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Products
@@ -71,10 +75,13 @@ export default function Home() {
             <Link to="/buy" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2">
               Purchase
             </Link>
-            <Link to="/login" className="block text-black hover:text-blue-300 transition-colors duration-300 font-medium py-2 flex items-center space-x-2">
+            <button
+              onClick={handleLoginClick}
+              className="flex items-center space-x-2 w-full justify-center py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow hover:from-blue-600 hover:to-purple-700 transition-all duration-200 focus:outline-none"
+            >
               <User className="w-4 h-4" />
               <span>Login</span>
-            </Link>
+            </button>
           </div>
         </div>
       </nav>
@@ -128,45 +135,44 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/purchase"
+              className="newsletter-btn no-underline"
+              style={{
+                padding: '1rem 2rem',
+                background: 'linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%)',
+                border: 'none',
+                borderRadius: '8px',
+                color: 'white',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)'
+              }}
+            >
+              <span>Start Shopping</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              to="/purchase"
+              className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
+            >
+              Browse Products
+            </Link>
+          </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  to="/purchase"
-                  className="newsletter-btn no-underline"
-                  style={{
-                  padding: '1rem 2rem',
-                  background: 'linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%)',
-                  border: 'none',
-                  borderRadius: '8px',
-                  color: 'white',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)'
-                  }}
-                >
-                  <span>Start Shopping</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  to="/purchase"
-                  className="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300 no-underline"
-                >
-                  Browse Products
-                </Link>
-                </div>
+          <style jsx>{`
+            .newsletter-btn:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            }
+          `}</style>
 
-                <style jsx>{`
-                .newsletter-btn:hover {
-                  transform: translateY(-2px);
-                  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-                }
-                `}</style>
-
-                {/* Stats */}
+          {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-gray-300">
             <div className="text-center">
               <div className="text-3xl font-bold text-gray-800 mb-2">10K+</div>
@@ -204,7 +210,7 @@ export default function Home() {
           height: 2px;
           bottom: -4px;
           left: 50%;
-          background: linear-gradient(to right, #3b82f6, #8b5cf6);
+          background: linear-gradient(to right, #3b82f6,rgb(71, 154, 248));
           transition: all 0.3s ease;
           transform: translateX(-50%);
         }

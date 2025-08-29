@@ -6,7 +6,8 @@ const db = require('../models');
 router.post('/register', register);
 router.post('/login', login);
 
-router.get('/users', async (req, res) => {
+router.get('/users', async (req, res) => 
+  {
   try {
     const users = await db.User.findAll({ 
       attributes: ['id', 'username','createdAt', 'updatedAt'] 

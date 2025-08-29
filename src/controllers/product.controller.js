@@ -2,6 +2,7 @@ const db = require('../models');
 const Product = db.Product;
 
 exports.getProducts = async (req, res) => {
+ 
   try {
     const products = await Product.findAll();
     res.status(200).json(products);
